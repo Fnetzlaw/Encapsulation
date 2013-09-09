@@ -9,50 +9,26 @@ package lab2;
  * @author netzl_000
  */
 public class GameCharacter {
-    private String playerOne;
-    private String palyerTwo;
-    private String playerThree;
-    private String palyerFour;
+    private String mageName;
+    private String warriorName;
 
-    public String getPlayerOne() {
+   public String getMageName() {
         //needs validation
-        return playerOne;
+        return mageName;
     }
 
-    public void setPlayerOne(String playerOne) {
+    public void setMageName(String mageName) {
         //needs validation
-        this.playerOne = playerOne;
+        this.mageName = mageName;
     }
 
-    public String getPalyerTwo() {
+    public String getWarriorName() {
         //needs validation
-        return palyerTwo;
+        return warriorName;
     }
 
-    public void setPalyerTwo(String palyerTwo) {
+    public void setWarriorName(String warriorName) {
         //needs validation
-        this.palyerTwo = palyerTwo;
+        this.warriorName = warriorName;
     }
-
-    public String getPlayerThree() {
-        //needs validation
-        return playerThree;
-    }
-
-    public void setPlayerThree(String playerThree) {
-        //needs validation
-        this.playerThree = playerThree;
-    }
-
-    public String getPalyerFour() {
-        //needs validation
-        return palyerFour;
-    }
-
-    public void setPalyerFour(String palyerFour) {
-        //needs validation
-        this.palyerFour = palyerFour;
-    }
-    
-    
 }
