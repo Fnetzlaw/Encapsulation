@@ -21,22 +21,26 @@ public class Employee {
     private boolean reviewedDeptPolicies;
     private boolean movedIn;
     private String cubeId;
-    private String ERR_MSG_meetDepartment = "Sorry, you cannot meet with "
+    
+    private final String ERR_MSG_meetDepartment = "Sorry, you cannot meet with "
             + "department staff until you have met with HR.";
-    private String ERR_MSG_reviewDept = "Sorry, you cannot review "
+    private final String ERR_MSG_reviewDept = "Sorry, you cannot review "
             + " department policies until you have first met with HR "
             + "and then with department staff.";
-    private String ERR_MSG_moveIntoCubicle = "Sorry, you cannot move in to a "
+    private final String ERR_MSG_moveIntoCubicle = "Sorry, you cannot move in to a "
             + "cubicle until you have first met with HR "
             + "and then with department staff, and then reviewed"
             + "department policies.";
+    private final int MIN_LENGTH = 1;
+    private final int MAX_YEAR_DATE = 2013;
+    private final int MAX_SSN = 9;
 
     public String getFirstName() {
         return firstName;
     }
 
     public void setFirstName(String firstName) {
-        if (firstName == null || firstName.length() == 0) {
+        if (firstName == null || firstName.length() < MIN_LENGTH) {
             throw new IllegalArgumentException();
         }
         this.firstName = firstName;
@@ -47,7 +51,7 @@ public class Employee {
     }
 
     public void setLastName(String lastName) {
-        if (lastName == null || lastName.length() == 0) {
+        if (lastName == null || lastName.length() < MIN_LENGTH) {
             throw new IllegalArgumentException();
         }
         this.lastName = lastName;
@@ -58,7 +62,7 @@ public class Employee {
     }
 
     public void setSsn(String ssn) {
-        if (ssn == null || ssn.length() < 9) {
+        if (ssn == null || ssn.length() > MAX_SSN) {
             throw new IllegalArgumentException();
         }
         this.ssn = ssn;
@@ -69,7 +73,7 @@ public class Employee {
     }
 
     public void setBirthDate(Date birthDate) {
-        if (birthDate == null || birthDate.getYear() < 2013) {
+        if (birthDate == null || birthDate.getYear() > MAX_YEAR_DATE) {
             throw new IllegalArgumentException();
         }
         this.birthDate = birthDate;
@@ -112,7 +116,7 @@ public class Employee {
     }
 
     public void setCubeId(String cubeId) {
-        if (cubeId == null || cubeId.length() == 0) {
+        if (cubeId == null || cubeId.length() < MIN_LENGTH) {
             throw new IllegalArgumentException();
         }
         this.cubeId = cubeId;
